@@ -1,0 +1,88 @@
+.d-block {
+  display: block;
+  background-color: aquamarine;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  /*div1 와 div2 사이 간격*/
+  margin: 20px;
+}
+
+.d-inline {
+  /*기본 적으로 display inline으로 되어 있다*/
+  display: inline;
+  background-color: pink;
+  border: 1px solid black;
+  width: 1000px;
+  height: 200px;
+  /*inline에서 padding, margin안쓰는게 좋다*/
+  /* padding: 15px;
+  margin: 20px; */
+}
+
+.d-inline-block {
+  /*기본 적으로 display inline이여서 inline-block으로 해줘야된다*/
+  display: inline-block;
+  background-color: yellowgreen;
+  border: 1px solid blue;
+  width: 100px;
+  height: 100px;
+  /*중간 간격 합쳐진다, 그래서 잘 사용해야된다*/
+  padding: 15px;
+  margin: 15px;
+}
+
+/*부모가 400px를 넘어도 더 늘어 지지 않는다 왜냐면 min이 400px이기 때문*/
+.parent {
+  width: 400px;
+  /*
+  width를 300px로 바꾸면 min클래스는 400px 유지, max는 같이 줄어 듦
+  width를 500px로 바꾸면 max는 400px 유지, min은 같이 늘어남 
+  */
+  height: 200px;
+  background-color: red;
+}
+
+.parent > .min {
+  min-width: 400px;
+  height: 100px;
+  background-color: orange;
+}
+
+.parent > .max {
+  max-width: 400px;
+  height: 100px;
+  background-color: rebeccapurple;
+}
+
+.box {
+  background-color: beige;
+  border: 1px solid black;
+}
+
+.box-px {
+  width: 50px;
+  height: 50px;
+}
+
+/*body에 기본적으로 padding이 있다*/
+.box-view {
+  width: 50vw;
+  height: 50vh;
+}
+
+.box-per {
+  width: 50%;
+  height: 50%;
+}
+
+.rem {
+  font-size: 2rem;
+}
+
+/*body는 기본 16px이다
+부모의 16px = 1em*/
+.em {
+  font-size: 2em;
+}

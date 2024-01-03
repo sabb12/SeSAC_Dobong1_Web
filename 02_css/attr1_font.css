@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Diphylleia&display=swap");
+@font-face {
+  font-family: "YClover-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/YClover-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-link {
+  font-family: "Bungee Spice", sans-serif;
+}
+
+/*@import*/
+.font-import {
+  font-family: "Diphylleia", serif;
+}
+
+/*@font-face*/
+.noonnu {
+  font-family: "YClover-Bold";
+}
+
+.sentences {
+  font-weight: bold;
+  font-size: 16px;
+  /*same as 16px*/
+  /* font-size: 1rem;
+  font-size: 1em; */
+
+  /*맨 마지막 께 적용 된다*/
+  text-align: left;
+  text-align: right;
+  text-align: center;
+
+  /*text-decoration*/
+  text-decoration: line-through;
+  text-decoration: underline;
+  text-decoration: overline;
+  text-decoration: none;
+
+  /*text-decoration*/
+  line-height: 2;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+  /*색깔 지정 방법*/
+  /* 1. 색깔 이름 작성: red, black, pink, 등등
+     2. rgb(-,-,-,)
+         -  "-"에는 0 ~ 255까지의 숫자가 올 수 있음
+         - 0이 가까울 수록 black, 255 가까울 수록 white
+     3. #------ : #c358ab
+         - 16진수로 이루어진 rgb 값 (0~9와 a,b,c,d,e,f로 이루어진 수)
+         - color: rgb(0,0,0); = black
+         - color: #000000; = black
+         - 투명도: rgba(0,0,0,0.5);
+  */
+}
