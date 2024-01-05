@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>attr4 background 실습</title>
+    <style>
+      div {
+        width: 500px;
+        height: 500px;
+        background: skyblue;
+        border: 1px solid black;
+      }
+
+      .box1 {
+        background: url("./img/lion.png");
+        background-repeat: repeat-x;
+      }
+
+      .box2 {
+        background: url("./img/lion.png");
+        background-repeat: no-repeat;
+        left: 100px;
+        top: 30px;
+        background-size: contain;
+      }
+
+      .box3 {
+        background: url("./img/lion.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </body>
+</html>

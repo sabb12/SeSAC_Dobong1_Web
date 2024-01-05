@@ -1,0 +1,90 @@
+/*body는 기본적으로 margin이랑 padding이 있어서 0으로 해준다*/
+body {
+  background: linear-gradient(white, orange);
+  height: 2000px;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid gray;
+  line-height: 100px;
+}
+
+/*position-static
+    - 기본값, 작성하지 않아도 됨
+    - top, botom, left, right 속성 적용 해도 안됨
+*/
+.position-static {
+  background-color: pink;
+  position: static;
+  /* top: 50px; */
+}
+
+/*position-relative
+    - 일반적인 문서 흐름에 따라서 배치가 됨(자기 자리 보존이 된다)
+    - 자기 자신을 기준으로 배치
+*/
+.position-relative {
+  background-color: aquamarine;
+  position: relative;
+  /*relative으로만 하면 변동이 없고 top, left, right, bottom으로 해야 된다*/
+  left: 50px;
+  right: 50px;
+}
+
+/*position-absolute
+    - viewport 기준으로 특정 위치에 배치
+    - 스크룰 되어도 움직이지 않음 > header 제작시 많이 이용
+*/
+.position-absolute {
+  background-color: gold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* opacity: 0.5; */
+}
+
+/*position-fixed
+    - 일반적인 문서 흐름에 따라서 배치가 됨(자기 자리 보존이 된다)
+    - 자기 자신을 기준으로 배치
+*/
+.position-fixed {
+  background-color: coral;
+  position: fixed;
+  top: 0;
+}
+/* 어근 나지 않는다*/
+.container {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  /* border: 1px solid blacks; */
+}
+.container div {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  position: absolute;
+}
+.container div:nth-child(1) {
+  background-color: #9afaff;
+  left: 10px;
+  z-index: 2;
+}
+
+.container div:nth-child(2) {
+  background-color: red;
+  left: 50px;
+  z-index: 1;
+  /* position: static; */
+}
+
+.container div:nth-child(3) {
+  background-color: blue;
+  left: 100px;
+}

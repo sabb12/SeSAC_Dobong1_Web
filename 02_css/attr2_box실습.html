@@ -19,6 +19,35 @@
         padding: 30px;
         margin-right: 30px;
       }
+
+      .box {
+        display: inline-block;
+        background-color: pink;
+        width: 100px;
+        height: 100px;
+        border-color: black blue red green;
+        border-style: solid dotted dashed double;
+        border-width: 5px 10px 20px 40px;
+      }
+
+      .box1 {
+        border-color: black blue red green;
+        border-style: solid dotted dashed double;
+        border-width: 5px 10px 20px 40px;
+      }
+
+      .opacity-box {
+        background-color: blue;
+        width: 200px;
+        height: 200px;
+      }
+      .opacity-box:hover {
+        /* display: none; */
+        visibility: hidden;
+        background-color: blue;
+        width: 200px;
+        height: 200px;
+      }
     </style>
   </head>
   <body>
@@ -27,5 +56,14 @@
       <div class="child1">CSS</div>
       <div class="child1">Javascript</div>
     </div>
+    <hr />
+    <h2>border-radius</h2>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <hr />
+    <h2>opacity</h2>
+    <div class="opacity-box"></div>
   </body>
 </html>

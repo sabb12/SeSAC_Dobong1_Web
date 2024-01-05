@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position 실습문제 - 애벌레 만들기</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        position: relative;
+        border: 1px solid;
+        width: 600px;
+        height: 475px;
+      }
+
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      .wormHead {
+        background-color: darkblue;
+        position: absolute;
+        left: 170px;
+        top: 150px;
+      }
+
+      .whiteCircle {
+        background-color: white;
+        position: absolute;
+        border: 1px solid black;
+        left: 15px;
+        top: 14px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .blackCircle {
+        background-color: black;
+        position: absolute;
+        border: 1px solid black;
+        top: 12px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+      }
+
+      .circle2 {
+        position: absolute;
+        background-color: blue;
+        left: 234px;
+        top: 203px;
+      }
+
+      .circle3 {
+        position: absolute;
+        background-color: #318ce7;
+        left: 278px;
+        top: 241px;
+      }
+
+      .circle4 {
+        position: absolute;
+        background-color: #6699cc;
+        left: 312px;
+        top: 294px;
+      }
+
+      .circle5 {
+        position: absolute;
+        background-color: #add8e6;
+        left: 366px;
+        top: 332px;
+        z-index: 1;
+      }
+
+      .img {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle wormHead">
+        <div class="whiteCircle">
+          <div class="blackCircle"></div>
+        </div>
+      </div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+      <div class="circle circle4"></div>
+      <div class="circle circle5"></div>
+      <div class="img">
+        <img src="./img/grass.png" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
