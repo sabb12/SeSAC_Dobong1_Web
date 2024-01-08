@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>overwatch 캐릭터 선택창 만들기</title>
+    <!-- CSS 링크 각자 css 경로에 맞도록 변경 -->
+    <link rel="stylesheet" href="./overwatch.css" />
+    <style>
+      body {
+        /* background-image bg.jpg 되도록 */
+        /* body- 수정하지 않아도 됩니다. */
+        margin: 0;
+        padding: 0;
+        background-image: url("./img/overwatch/bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 99.7vh;
+      }
+
+      .container .heroes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 560px;
+        margin-bottom: 10px;
+      }
+
+      .container .heroes .hero {
+        width: 70px;
+        height: 70px;
+        border: 2px solid white;
+        border-radius: 10px;
+        transform: skew(-11deg);
+        margin: 3px;
+      }
+
+      .container .heroes .hero:hover {
+        background-color: orange;
+        transition-duration: 1s;
+        transform: scale(1.3) skew(-11deg);
+        z-index: 1;
+      }
+
+      .container .heroes .hero .image {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        background-size: cover;
+      }
+
+      /* 로고 - 수정하지 않아도 됩니다. */
+      .container .logo {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .container .logo img {
+        width: 100%;
+      }
+
+      /* 사진 넣기 작업 */
+      /* 사진이 해당 경로에 없다면 경로 수정해주세요. */
+      .container .heroes .hero:nth-child(1) .image {
+        background-image: url("./img/overwatch/hero1.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(2) .image {
+        background-image: url("./img/overwatch/hero2.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(3) .image {
+        background-image: url("./img/overwatch/hero3.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(4) .image {
+        background-image: url("./img/overwatch/hero4.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(5) .image {
+        background-image: url("./img/overwatch/hero5.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(6) .image {
+        background-image: url("./img/overwatch/hero6.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(7) .image {
+        background-image: url("./img/overwatch/hero7.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(8) .image {
+        background-image: url("./img/overwatch/hero8.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(9) .image {
+        background-image: url("./img/overwatch/hero9.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(10) .image {
+        background-image: url("./img/overwatch/hero10.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(11) .image {
+        background-image: url("./img/overwatch/hero11.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(12) .image {
+        background-image: url("./img/overwatch/hero12.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(13) .image {
+        background-image: url("./img/overwatch/hero13.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(14) .image {
+        background-image: url("./img/overwatch/hero14.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(15) .image {
+        background-image: url("./img/overwatch/hero15.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(16) .image {
+        background-image: url("./img/overwatch/hero16.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(17) .image {
+        background-image: url("./img/overwatch/hero17.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(18) .image {
+        background-image: url("./img/overwatch/hero18.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(19) .image {
+        background-image: url("./img/overwatch/hero19.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(20) .image {
+        background-image: url("./img/overwatch/hero20.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(21) .image {
+        background-image: url("./img/overwatch/hero21.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(22) .image {
+        background-image: url("./img/overwatch/hero22.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(23) .image {
+        background-image: url("./img/overwatch/hero23.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(24) .image {
+        background-image: url("./img/overwatch/hero24.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(25) .image {
+        background-image: url("./img/overwatch/hero25.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(26) .image {
+        background-image: url("./img/overwatch/hero26.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(27) .image {
+        background-image: url("./img/overwatch/hero27.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(28) .image {
+        background-image: url("./img/overwatch/hero28.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(29) .image {
+        background-image: url("./img/overwatch/hero29.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(30) .image {
+        background-image: url("./img/overwatch/hero30.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(31) .image {
+        background-image: url("./img/overwatch/hero31.png");
+        background-repeat: no-repeat;
+      }
+
+      .container .heroes .hero:nth-child(32) .image {
+        background-image: url("./img/overwatch/hero32.png");
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 전체를 감싸는 콘테이너 -->
+    <div class="container">
+      <!-- heroes는 캐릭터 선택창 전체를 감싸게 됨 -->
+      <div class="heroes">
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+      </div>
+      <div class="logo">
+        <!-- logo_overwatch.png 읽을 수 있도록 경로 수정 -->
+        <img src="./img/overwatch/logo_overwatch.png" alt="overwatch logo" />
+      </div>
+    </div>
+  </body>
+</html>

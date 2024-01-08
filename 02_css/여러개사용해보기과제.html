@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform 여러개 사용해보기</title>
+    <style>
+      .box {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        transition-duration: 1s;
+      }
+
+      .box1:hover {
+        width: 200px;
+      }
+
+      .box2:hover {
+        transform: skewX(-45deg) translate(51px);
+      }
+
+      .box3:hover {
+        width: 100px;
+        height: 100px;
+        transform: translateX(400px) rotate(360deg);
+        border-radius: 50%;
+        background-color: red;
+      }
+
+      .box4:hover {
+        background-color: green;
+        transform: scale(2) rotateY(365deg);
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+  </body>
+</html>

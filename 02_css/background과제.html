@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>background 실습</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        height: 99.8vh;
+      }
+
+      .outerLayer {
+        position: relative;
+        border-radius: 50%;
+        width: 600px;
+        height: 600px;
+        background: linear-gradient(45deg, yellow, red);
+      }
+
+      .innerLayer {
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        border: 10px solid white;
+        border-radius: 50%;
+        width: 560px;
+        height: 560px;
+        /* background-color: white; */
+        background-image: url("./img/fishBread.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="outerLayer">
+        <div class="innerLayer"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 연달아 나열하기 transition & transform 과제</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 99.7vh;
+      }
+
+      .beach {
+        width: 400px;
+        height: 250px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: -100px;
+        transform: skew(0deg, 21deg);
+      }
+
+      .beach1 {
+        background-image: url("./img/beach1.jpg");
+        z-index: 3;
+      }
+      .beach2 {
+        background-image: url("./img/beach2.jpg");
+        z-index: 2;
+      }
+      .beach3 {
+        background-image: url("./img/beach3.jpg");
+        z-index: 1;
+      }
+
+      .beach1:hover {
+        /* transform: rotateY(45deg); */
+        transform: rotateY(0deg);
+        transition-duration: 1s;
+        /* z-index: 1; */
+      }
+      .beach2:hover {
+        /* transform: rotateY(45deg); */
+        transform: rotateY(0deg);
+        transition-duration: 1s;
+        z-index: 3;
+      }
+      .beach3:hover {
+        transform: rotateY(0deg);
+        transition-duration: 1s;
+        z-index: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="beach beach1"></div>
+      <div class="beach beach2"></div>
+      <div class="beach beach3"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>background 실습 해답</title>
+    <style>
+      div {
+        border-radius: 50%;
+      }
+      .insta {
+        position: relative;
+        background: linear-gradient(45deg, #ffe600 10%, #ff0080, #db20db);
+        width: 300px;
+        height: 300px;
+      }
+      .insta > .img {
+        /* 중앙정렬 */
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        margin: auto;
+
+        /* 계산하기 쉽도록 box-sizing :border-box설정*/
+        box-sizing: border-box;
+
+        /* border + content 크기가 285px */
+        border: 5px solid white;
+        width: 285px;
+        height: 285px;
+
+        /* background-image 관련 속성 */
+        /* background-image: url('./img/코디.png');
+        background-color: white;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; */
+
+        /* 단축속성 */
+        /* background : color image repeat position/size */
+        background: white url("./img/코디.png") no-repeat 0 center/cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="insta">
+      <div class="img"></div>
+    </div>
+  </body>
+</html>

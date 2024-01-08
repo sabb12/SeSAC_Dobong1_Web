@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation 실습</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-color: orange;
+        border-radius: 50%;
+        animation-name: runningAround;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      @keyframes runningAround {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        25% {
+          top: 0;
+          left: calc(100vw - 100px);
+        }
+
+        50% {
+          top: calc(100vh - 100px);
+          left: calc(100vw - 100px);
+        }
+
+        75% {
+          top: calc(100vh - 100px);
+          left: 0;
+        }
+
+        100% {
+          top: 0;
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="container"> -->
+    <div class="box"></div>
+    <!-- </div> -->
+  </body>
+</html>
