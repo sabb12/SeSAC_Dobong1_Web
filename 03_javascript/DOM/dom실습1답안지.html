@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>민트 초코는 <span>맛있다 >_<</span></div>
+    <script>
+      // const div = document.getElementsByTagName('div')[0];
+      const div = document.querySelector("div");
+      // const span = document.getElementsByTagName('span')[0];
+      const span = document.querySelector("span");
+
+      span.textContent = "맛 없다 --;;";
+      span.style = "font-weight: 700";
+      // span.style = "font-weight: 700; color: red";
+      // style로 통제로 하면 아래 red는 없어진다 왜?
+      // style 이라는 하나의 속성에 color, font-weight도 존재 등드
+      span.style.color = "red";
+      span.style.fontWeigh = "700";
+    </script>
+  </body>
+</html>

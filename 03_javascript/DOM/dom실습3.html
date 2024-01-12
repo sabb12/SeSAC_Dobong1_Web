@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .section {
+        height: 431px;
+        width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .article-box {
+        border-radius: 5px;
+        background-color: rgb(248, 255, 230);
+        width: 150px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2 class="title">이달의 맛 BEST9</h2>
+      <section class="section">
+        <!-- <article class="article-box">
+        <img src="./img/icecream1.png" alt="icecream1" />
+        <h3 class="text-center">Top1</h3>
+        <div class="text-center">내가 아인슈페너?!</div>
+      </article>
+      <article class="article-box">
+        <img src="./img/icecream2.png" alt="icecream2" />
+        <h3 class="text-center">Top2</h3>
+        <div class="text-center">엄마는 외계인</div>
+      </article>
+      <article class="article-box">
+        <img src="./img/icecream3.png" alt="icecream3" />
+        <h3 class="text-center">Top3</h3>
+        <div class="text-center">민트 초콜릿 집</div>
+      </article>
+      <article class="article-box">
+        <img src="./img/icecream4.png" alt="icecream4" />
+        <h3 class="text-center">Top4</h3>
+        <div class="text-center">뉴욕 치즈케이크</div>
+      </article>
+      <article class="article-box">
+        <img src="./img/icecream5.png" alt="icecream5" />
+        <h3 class="text-center">Top5</h3>
+        <div class="text-center">아이스 초당옥수수</div>
+      </article>
+      <article class="article-box">
+        <img src="./img/icecream6.png" alt="icecream6" />
+        <h3 class="text-center">Top6</h3>
+        <div class="text-center">초콜릿 무스</div>
+      </article>
+      <article class="article-box">
+        <img src="./img/icecream7.png" alt="icecream7" />
+        <h3 class="text-center">Top7</h3>
+        <div class="text-center">체리쥬빌레</div>
+      </article>
+      <article class="article-box">
+        <img src="./img/icecream8.png" alt="icecream8" />
+        <h3 class="text-center">Top8</h3>
+        <div class="text-center">뮤!년내꺼야</div>
+      </article>
+      <article class="article-box">
+        <img src="./img/icecream9.png" alt="icecream9" />
+        <h3 class="text-center">Top9</h3>
+        <div class="text-center">오레오 쿠키 엔 크림</div>
+      </article> -->
+      </section>
+    </div>
+    <script>
+      let textCenter = document.querySelector(".section");
+      const iceCreams = [
+        {
+          image: "./img/icecream2.png",
+          rank: "Top1",
+          name: "내가 아인슈페너?!",
+        },
+        { image: "./img/icecream2.png", rank: "Top2", name: "엄마는 외계인" },
+        { image: "./img/icecream3.png", rank: "Top3", name: "민트 초콜릿 집" },
+        { image: "./img/icecream4.png", rank: "Top4", name: "뉴욕 치즈케이크" },
+        {
+          image: "./img/icecream5.png",
+          rank: "Top5",
+          name: "아이스 초당옥수수",
+        },
+        { image: "./img/icecream6.png", rank: "Top6", name: "초콜릿 무스" },
+        { image: "./img/icecream7.png", rank: "Top7", name: "체리쥬빌레" },
+        { image: "./img/icecream8.png", rank: "Top8", name: "뮤!년내꺼야" },
+        {
+          image: "./img/icecream9.png",
+          rank: "Top9",
+          name: "오레오 쿠키 엔 크림",
+        },
+      ];
+
+      iceCreams.map((iceCream) => {
+        return (textCenter.innerHTML += `
+            <article class="article-box">
+                <img src="${iceCream.image}" alt="icecream1" />
+                <h3 class="text-center">${iceCream.rank}</h3>
+                <div class="text-center">${iceCream.name}</div>
+            </article>
+        `);
+      });
+    </script>
+  </body>
+</html>

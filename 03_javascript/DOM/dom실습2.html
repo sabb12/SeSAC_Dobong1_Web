@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>TODO List</h1>
+    <ul class="ul">
+      <li class="done">점심 먹기</li>
+      <li class="done">커피 마시기</li>
+      <li class="todoList">과제 완성하기</li>
+      <li class="todoList">운동하기</li>
+      <li class="todoList">저녁먹기</li>
+    </ul>
+    <script>
+      let ul = document.querySelector(".ul");
+      let done = document.querySelectorAll(".done");
+      let todoList = document.querySelectorAll(".todoList");
+      for (let i = 0; i < done.length; i++) {
+        done[i].style = "color: grey; text-decoration: line-through";
+      }
+
+      for (let i = 0; i < todoList.length; i++) {
+        todoList[i].style = "font-weight: bold";
+      }
+    </script>
+  </body>
+</html>
