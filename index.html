@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="value" />
+    <button id="btn1">innerHTML</button>
+    <button id="btn2">createELEMent</button>
+    <div class="container"></div>
+    <script>
+      const value1 = document.getElementById("value");
+      const btn1 = document.getElementById("btn1");
+      const btn2 = document.getElementById("btn2");
+      const container = document.querySelector(".container");
+
+      btn1.addEventListener("click", (e) => {
+        // container.innerHTML += `<div>${value1.value}</div>`;
+        container.append(`<div>${value1.value}</div>`);
+        value1.value = "";
+      });
+
+      btn2.addEventListener("click", (e) => {
+        const newElement = document.createElement("li");
+        // console.log("newElement: ", newElement);
+        newElement.innerHTML = value1.value;
+        container.appendChild(newElement);
+        // console.log("container: ", container);
+        value1.value = "";
+      });
+    </script>
+  </body>
+</html>

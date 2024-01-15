@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <script>
+      // append
+      function appendJS() {
+        // 부모 ul에 자식 li를 append
+        // 1. 부모 ul 선택
+        let ul = document.querySelector("ul");
+        // 2. 추가할 자식 li 요소 만들고
+        let li = document.createElement("li");
+        // 3. li 요소에 내용 추가
+        li.innerText = "red";
+        // 4. ul에 자식 li를 append
+        ul.append(li);
+      }
+
+      function appendJQuery() {
+        $("ul").append("<li>jQuery append</li>");
+      }
+
+      // prepend
+      function prependJS() {
+        // 부모 ul에 자식 li를 append
+        // 1. 부모 ul 선택
+        let ul = document.querySelector("ul");
+        // 2. 추가할 자식 li 요소 만들고
+        let li = document.createElement("li");
+        // 3. li 요소에 내용 추가
+        li.innerText = "red";
+        // 4. ul에 자식 li를 append
+        ul.prepend(li);
+      }
+
+      function prependJQuery() {
+        $("ul").prepend("<li>jQuery append</li>");
+      }
+
+      // before
+      function beforeJS() {
+        // 추가할 기준이 되는 요소 선택
+        let green = document.querySelector(".green");
+        // 추가할 요소 생성
+        let li = document.createElement("li");
+        li.innerText = "before JS";
+        green.before(li);
+      }
+
+      function beforeJQuery() {
+        $(".green").before("<li>jQuery before</li>");
+      }
+
+      // after
+      // 위에 코드에서 before -> after
+
+      // 요소 삭제
+      // remove
+      function removeJS() {
+        let li = document.getElementById("li2");
+        li.remove();
+      }
+
+      function removeJQUERY() {
+        $("#li2").remove();
+      }
+
+      // empty
+      function emptyJS() {
+        let nums = document.querySelector(".nums");
+        nums.innerHTML = "";
+      }
+      function emptyJQUERY() {
+        $(".nums").empty();
+      }
+
+      // 요소 탐색
+      function findParent() {
+        // parent(): 부모요소를 반환 한다
+        console.log($("#li2").parent());
+      }
+
+      function findParents() {
+        // parent(): 부모, 조상요소를 모두 반환 한다
+        console.log($("#li2").parents());
+      }
+
+      function findNext() {
+        // next(): nextSibling
+        console.log($("#li2").next());
+        console.log($("#li2").next()[0]);
+      }
+
+      function findPrev() {
+        // prev(): prevSibling
+        console.log($("#li2").prev());
+      }
+
+      function findChildren() {
+        // children() : 자식 요소 모두 반환
+        console.log($("#li2").children());
+      }
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>organe</li>
+      <li class="green">green</li>
+      <li>navy</li>
+      <!--추가하기-->
+    </ul>
+    <button onclick="appendJS()">append JS</button>
+    <button onclick="appendJQuery()">append JQuery</button>
+    <button onclick="prependJS()">prepend JS</button>
+    <button onclick="prependJQuery()">prepend JQuery</button>
+    <button onclick="beforeJS()">before JS</button>
+    <button onclick="beforeJQuery()">before JQuery</button>
+
+    <!-- 요소 삭제 -->
+    <div>
+      <ul class="nums">
+        <li>1</li>
+        <li id="li2">2</li>
+        <li>3</li>
+      </ul>
+    </div>
+    <button onclick="removeJS()">remove JS</button>
+    <button onclick="removeJQUERY()">remove JQUERY</button>
+
+    <button onclick="emptyJS()">empty JS</button>
+    <button onclick="emptyJQUERY()">empty JQUERY</button>
+    <br />
+    <button onclick="findParent()">findParent</button>
+    <button onclick="findParents()">findParents</button>
+    <button onclick="findNext()">findNext</button>
+    <button onclick="findPrev()">findPrev</button>
+    <button onclick="findChildren()">findChildren</button>
+  </body>
+</html>
