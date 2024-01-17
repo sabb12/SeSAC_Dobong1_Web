@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="todoList">오늘 할일</div>
+    <div class="completedList">완료 한일</div>
+    <script>
+      const todoList = document.querySelector(".todoList");
+      const completedList = document.querySelector(".completedList");
+
+      const inputValue = document.createElement("input");
+      const inputButton = document.createElement("button");
+      inputButton.innerText = "Enter";
+      document.body.before(inputValue, inputButton);
+
+      inputButton.addEventListener("click", (e) => {
+        const todoItem = document.createElement("div");
+        const randomId = Math.floor(Math.random() * 100);
+        todoItem.setAttribute("date-set", randomId);
+        todoItem.innerText = inputValue.value;
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("delBut");
+        deleteButton.type = "button";
+        deleteButton.innerText = "삭제";
+
+        // todoList.appendChild(todoItem, checkbox): appendChild로는 2개 동시 못 한다;
+        todoList.append(todoItem, checkbox, deleteButton);
+
+        inputValue.value = "";
+      });
+
+      deleteButton.addEventListener("click", (e) => {
+        const delBtn = document.querySelector(`[data-set=${randomId}]`);
+        if (delBtn) {
+          delBtn.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
