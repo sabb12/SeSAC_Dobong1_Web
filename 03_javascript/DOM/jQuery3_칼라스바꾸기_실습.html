@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+      integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <style>
+      .bg-pink {
+        background-color: pink;
+      }
+
+      .bg-red {
+        background-color: red;
+      }
+    </style>
+    <script>
+      let colors = true;
+      function switchClass() {
+        if (colors) {
+          $("#hi").switchClass("bg-pink", "bg-red");
+        } else {
+          $("#hi").switchClass("bg-red", "bg-pink");
+        }
+        colors = !colors;
+      }
+
+      function toggleClass() {
+        $("#hi").toggleClass("bg-pink bg-red");
+      }
+    </script>
+  </head>
+  <body>
+    <p id="hi" class="color-blue">안녕하세요</p>
+    <button onclick="switchClass()">클래스 switch</button>
+    <button onclick="toggleClass()">클래스 toggle</button>
+  </body>
+</html>

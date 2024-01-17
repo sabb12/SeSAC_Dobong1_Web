@@ -11,25 +11,47 @@
     <button id="btn2">createELEMent</button>
     <div class="container"></div>
     <script>
-      const value1 = document.getElementById("value");
-      const btn1 = document.getElementById("btn1");
-      const btn2 = document.getElementById("btn2");
       const container = document.querySelector(".container");
+      document.getElementById("btn1").addEventListener("click", (e) => {
+        let div = document.createElement("div");
+        div.setAttribute("data-set", Math.floor(Math.random() * 100));
+        // classList.add("className")을 추가
+        // <div class="className"></div>
+        div.classList.add("className");
+        // <div class="className hi"></div>
+        div.classList.add("hi");
+        // <div class="className hi bye"></div>
+        div.classList.toggle("bye");
+        // <div class="className hi"></div>
+        div.classList.remove("bye");
 
-      btn1.addEventListener("click", (e) => {
-        // container.innerHTML += `<div>${value1.value}</div>`;
-        container.append(`<div>${value1.value}</div>`);
-        value1.value = "";
+        div.innerHTML = "hi";
+        container.append(div);
       });
+      document.getElementById("btn2").addEventListener("click", (e) => {
+        
+        
+      })
 
-      btn2.addEventListener("click", (e) => {
-        const newElement = document.createElement("li");
-        // console.log("newElement: ", newElement);
-        newElement.innerHTML = value1.value;
-        container.appendChild(newElement);
-        // console.log("container: ", container);
-        value1.value = "";
-      });
+      // const value1 = document.getElementById("value");
+      // const btn1 = document.getElementById("btn1");
+      // const btn2 = document.getElementById("btn2");
+      // const container = document.querySelector(".container");
+
+      // btn1.addEventListener("click", (e) => {
+      //   // container.innerHTML += `<div>${value1.value}</div>`;
+      //   container.append(`<div>${value1.value}</div>`);
+      //   value1.value = "";
+      // });
+
+      // btn2.addEventListener("click", (e) => {
+      //   const newElement = document.createElement("li");
+      //   // console.log("newElement: ", newElement);
+      //   newElement.innerHTML = value1.value;
+      //   container.appendChild(newElement);
+      //   // console.log("container: ", container);
+      //   value1.value = "";
+      // });
     </script>
   </body>
 </html>
