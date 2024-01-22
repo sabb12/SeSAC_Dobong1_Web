@@ -89,3 +89,40 @@ let me = { ...me1, ...me2 };
 //같은 key이름이 있을 때 뒤에 있는 key이름이 들어간다
 console.log("me: ", me);
 me.greeting();
+
+// rest
+
+const obj2 = {
+  title: "제목",
+  content: "내용",
+  num: 0,
+  key4: "value4",
+  key5: "value5",
+};
+
+// ...obj3은 새로운 obj 형태로 만들어 준거다
+// const { title: a, content: b, num: c, ...obj3 } = obj2;
+// console.log("obj3: ", obj3);
+
+function test(...valuue) {
+  console.log(...valuue);
+  const [a, b, ...rest] = valuue;
+  console.log(a);
+  console.log(b);
+  console.log(rest);
+}
+
+// test(1, 2, 3, 4, 5, 6);
+
+// 매개변수가 몇개가 들어오든 합산해주는 함수 addNumber()
+
+function addNumber(...rest) {
+  let sum = 0;
+  rest.forEach((num) => {
+    sum += num;
+  });
+  return sum;
+}
+
+let result1 = addNumber(1, 2, 3, 4, 5, 6, 7);
+console.log(result1);
