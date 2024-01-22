@@ -44,3 +44,48 @@ console.log(obj.title);
 // key 이름이 너무 긴거 같아서 짧게 쓰는 방법
 const { title: t2, content, number } = obj;
 console.log("t2: ", t2);
+
+/* 전개구문 ...*/
+// ...연산자
+const array3 = [1, 2, 3];
+const array4 = ["a", "b", "c"];
+
+for (let arr of array3) {
+  console.log("arr: ", arr);
+}
+console.log("...array3: ", ...array3);
+
+// concat method 대신 사용해도 된다
+const array5 = array3.concat(array4);
+const array6 = [...array3, ...array4];
+console.log("array5: ", array5);
+console.log("array6: ", array6);
+
+const str = "leo";
+let strToArr = [...str];
+let strToArr2 = str.split("");
+console.log("strToArr: ", strToArr);
+console.log("strToArr2: ", strToArr2);
+
+// object spread 합치기;
+const me1 = {
+  name: "allie",
+  height: 163,
+  friend: null,
+  married: false,
+};
+
+const me2 = {
+  name: "진형",
+  like: ["코딩하기", "놀러가기"],
+  greeting: function () {
+    console.log(
+      `안녕하세요, 제 이름은 ${this.name}이고요, 키는${this.height}입니다`
+    );
+  },
+};
+
+let me = { ...me1, ...me2 };
+//같은 key이름이 있을 때 뒤에 있는 key이름이 들어간다
+console.log("me: ", me);
+me.greeting();
