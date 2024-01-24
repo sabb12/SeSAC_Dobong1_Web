@@ -1,0 +1,4 @@
+{
+  "type": "module",
+  "__comment__": "ES6 모듈로 진행할 때는 type: module 먕시(안하면 error난다/ json에서는 comment달수 없어 이렇게 사용한다"
+}
