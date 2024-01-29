@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>axios post 로그인</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form name="login">
+      ID: <input type="text" name="name" />
+      <br />
+
+      PW: <input type="text" name="password" />
+      <br />
+
+      <button type="button" onclick="loginFunction()">로그인</button>
+    </form>
+    <div class="result"></div>
+    <script>
+      const result = document.querySelector(".result");
+
+      function loginFunction() {
+        const form = document.forms["login"];
+        const data = {
+          name: form.name.value,
+          password: form.password.value,
+        };
+
+        try {
+          axios({
+            method: "POST",
+            url: "/axios",
+            data: data,
+          });
+          if (!data.name && !data.password) {
+            result.innerText = "로그인 실패!";
+            result.style.color = "red";
+          } else {
+            result.innerText = "로그인 성공!";
+            result.style.color = "green";
+            alert("로그인 하셨습니다!!");
+          }
+        } catch (err) {
+          console.log("err !!", err);
+        }
+      }
+    </script>
+  </body>
+</html>
