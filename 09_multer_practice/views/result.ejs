@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/result.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h5><%=userInfo.userName%>님 마이페이지</h5>
+      <img src="<%=image.path%>" alt="사진입니다" width="200" height="200" />
+      <div class="container">
+        <div class="div">
+          <div class="title">아이디</div>
+          <div><%=userInfo.userID%></div>
+        </div>
+        <div class="div">
+          <div class="title">비밀번호</div>
+          <div><%=userInfo.userPW%></div>
+        </div>
+        <div class="div">
+          <div class="title">이름</div>
+          <div><%=userInfo.userName%></div>
+        </div>
+        <div class="div">
+          <div class="title">나이</div>
+          <div><%=userInfo.userAge%></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

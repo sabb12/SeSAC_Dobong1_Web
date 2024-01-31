@@ -16,14 +16,14 @@
   </head>
   <body>
     <form
-      action="/upload"
+      action="/displayInfo"
       method="post"
       name="register"
       enctype="multipart/form-data"
     >
       <label>
         <span>아이디</span>
-        <input type="email" name="userID" id="userID" />
+        <input type="text" name="userID" id="userID" />
       </label>
 
       <label>
@@ -44,45 +44,11 @@
       <label>
         <span>프로필사진</span>
         <input type="file" id="userFile" name="userFile" />
-        <!-- <img
-          src="/static/img/default.jpg"
-          alt="기본 프로필 이미지"
-          width="200"
-          height="200"
-          class="profile"
-        /> -->
       </label>
 
       <button type="button">리셋</button>
-      <button type="button" onclick="registerBtn()">회원가입</button>
+      <button type="submit">회원가입</button>
     </form>
-    <script>
-      function registerBtn() {
-        const formData = new FormData();
-        const form = document.forms["register"];
-        const userFile = document.getElementById("userFile");
-        formData.append("file", userFile.files[0]);
-        formData.append("userID", form.userID.value);
-        formData.append("userPW", form.userPW.value);
-        formData.append("userName", form.userName.value);
-        formData.append("userAGE", form.userAGE.value);
-
-        axios({
-          method: "POST",
-          url: "/axios",
-          data: formData,
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-          .then(function (res) {
-            console.log("res", res);
-            console.log("res.data: ", res.data);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      }
-    </script>
+    <script></script>
   </body>
 </html>

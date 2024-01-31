@@ -7,12 +7,11 @@ const PORT = 8080;
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-app.use("/uploads", express.static(__dirname + "/uploads"));
-app.use("/static", express.static(__dirname + "/public"));
-app.use("/static", express.static(__dirname + "/static"));
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use("/uploads", express.static(__dirname + "/uploads"));
+app.use("/static", express.static(__dirname + "/public"));
 
 const uploadDetail = multer({
   storage: multer.diskStorage({
@@ -34,17 +33,13 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
-app.post("/axios", function (req, res) {
-  console.log(req.body);
-  res.send(req.body);
-});
-
-app.post("/upload", uploadDetail.single("axios"), function (req, res) {
+app.post("/displayInfo", uploadDetail.single("userFile"), function (req, res) {
   console.log(req.file);
   console.log(req.body);
-  /*
-   */
-  res.send("파일 업로드 완료^^");
+  res.render("result", {
+    image: req.file,
+    userInfo: req.body,
+  });
 });
 
 app.listen(PORT, function () {
