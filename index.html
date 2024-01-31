@@ -6,14 +6,51 @@
     <title>Document</title>
   </head>
   <body>
-    <button class="button">hi</button>
-    <button class="button">bye</button>
-    <button class="button">welcome</button>
+    <input type="text" name="" class="nameInput" />
+    <input type="text" name="" class="priceInput" />
+    <button class="btn">입력</button>
+    <h1>Container Area</h1>
+    <div class="container"></div>
     <script>
-      const buttons = document.querySelectorAll("button");
-      const buttons2 = document.getElementsByClassName("button");
-      console.log(buttons);
-      console.log(buttons2);
+      const nameInput = document.querySelector(".nameInput");
+      const priceInput = document.querySelector(".priceInput");
+      const btn = document.querySelector(".btn");
+      const container = document.querySelector(".container");
+
+      class Product {
+        constructor(name, price) {
+          this.id = Date.now();
+          this.name = name;
+          this.price = price;
+        }
+      }
+
+      const productList = [];
+
+      btn.addEventListener("click", (e) => {
+        const newProduct = new Product(nameInput.value, priceInput.value);
+        productList.push(newProduct);
+        productList.push({
+          id: Date.now(),
+          name: nameInput.value,
+          price: priceInput.value,
+        });
+
+        // Clear the container before updating it
+        container.innerHTML = "";
+
+        // Display each product in the container
+        productList.forEach((product) => {
+          const productElement = document.createElement("div");
+          productElement.textContent = `${product.name} and ${product.price}`;
+          container.appendChild(productElement);
+        });
+
+        nameInput.value = "";
+        priceInput.value = "";
+        console.log("inside", productList);
+      });
+      console.log("outside", productList);
     </script>
   </body>
 </html>

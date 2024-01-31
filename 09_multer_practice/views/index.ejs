@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      label {
+        display: flex;
+      }
+      label span {
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      action="/upload"
+      method="post"
+      name="register"
+      enctype="multipart/form-data"
+    >
+      <label>
+        <span>아이디</span>
+        <input type="email" name="userID" id="userID" />
+      </label>
+
+      <label>
+        <span>비밀번호</span>
+        <input type="password" name="userPW" id="userPW" />
+      </label>
+
+      <label>
+        <span>이름</span>
+        <input type="text" name="userName" id="userName" />
+      </label>
+
+      <label>
+        <span>나이</span>
+        <input type="text" name="userAGE" id="userAGE" />
+      </label>
+
+      <label>
+        <span>프로필사진</span>
+        <input type="file" id="userFile" name="userFile" />
+        <!-- <img
+          src="/static/img/default.jpg"
+          alt="기본 프로필 이미지"
+          width="200"
+          height="200"
+          class="profile"
+        /> -->
+      </label>
+
+      <button type="button">리셋</button>
+      <button type="button" onclick="registerBtn()">회원가입</button>
+    </form>
+    <script>
+      function registerBtn() {
+        const formData = new FormData();
+        const form = document.forms["register"];
+        const userFile = document.getElementById("userFile");
+        formData.append("file", userFile.files[0]);
+        formData.append("userID", form.userID.value);
+        formData.append("userPW", form.userPW.value);
+        formData.append("userName", form.userName.value);
+        formData.append("userAGE", form.userAGE.value);
+
+        axios({
+          method: "POST",
+          url: "/axios",
+          data: formData,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+          .then(function (res) {
+            console.log("res", res);
+            console.log("res.data: ", res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    </script>
+  </body>
+</html>

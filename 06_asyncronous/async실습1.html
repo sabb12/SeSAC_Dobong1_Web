@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <h1>배경색이 1초에 한 번씩 변경됩니다 실습.</h1>
+  <body>
+    <script>
+      function changeColor(color) {
+        return new Promis((resolve, reject) => {
+          document.body.style.backgroundColor = color;
+          resolve(color);
+        }, 1000);
+      }
+
+      changeColor("red")
+        .then(() => {
+          return changeColor("organ");
+        })
+        .then(() => {
+          return changeColor("yellow");
+        })
+        .then(() => {
+          return changeColor("green");
+        })
+        .then(() => {
+          return changeColor("blue");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>
