@@ -67,6 +67,46 @@ app.post("/fetch", function (req, res) {
   res.send(req.body);
 });
 
+// open api 사용
+app.get("/open-api", function (req, res) {
+  res.render("api");
+});
+
+// 실습 1 답안지
+
+const id = "pororo";
+const pw = "1234";
+
+app.get("/practice1", (req, res) => {
+  res.render("practice1");
+});
+app.get("/practice2", (req, res) => {
+  res.render("practice2");
+});
+
+app.get("/axios-practice1", function (req, res) {
+  // params: data 가 req.query로 들어 온다
+  console.log(req.query);
+  res.send(req.query);
+});
+
+app.post("/axios-practice2", (req, res) => {
+  console.log(req.body);
+  // 실제 서버의 계정 정보와, 클라이언트의 계정정보가 일치 하는지 검사
+  const { id: clientID, clientPW } = req.body;
+  if (clientID === id && clientPW === pw) {
+    res.send({
+      userInfo: req.body,
+      isSuccess: true,
+    });
+  } else {
+    res.send({
+      // ...req.body,
+      isSuccess: false,
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });

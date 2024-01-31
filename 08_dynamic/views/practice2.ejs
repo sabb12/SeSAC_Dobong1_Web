@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      .sucess {
+        color: blue;
+        font-weight: 700;
+      }
+
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+
+      label {
+        display: flex;
+      }
+
+      label span {
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="login">
+      <label>
+        <span>아이디</span>
+        <input type="text" name="userID" required />
+      </label>
+      <label>
+        <span>비밀번호</span>
+        <input type="text" name="userPW" required />
+      </label>
+      <br />
+      <br />
+      <button type="button" onclick="clickLogin()">로그인</button>
+    </form>
+    <div class="message"></div>
+    <script>
+      function clickLogin() {
+        const form = document.forms["login"];
+        const message = document.querySelector(".message");
+
+        // 유효성 검증(required 표시된 항목에 대해서 체크)
+        console.log(form.userID.checkValidity());
+        if (!form.userID.checkValidity() || form.userPW.checkValidity()) {
+          message.textContent = "아이디와 비밀번호는 필수 값입니다.";
+          return;
+        }
+        const data = {
+          id: form.userID.value,
+          password: form.userPW.value,
+        };
+        axios({
+          method: "POST",
+          url: "/axios-practice2",
+          data: data,
+        })
+          .then(function (response) {
+            console.log(response.data);
+            if (response.data.isSuccess) {
+              message.textContent = `${response.data.userInfo.id}님 환영합니다`;
+              message.classList.add("success");
+              message.classList.remove("error");
+            } else {
+              message.textContent = `로그인실패, 아이디 또는 패스워드 오류`;
+              message.classList.remove("success");
+              message.classList.add("error");
+            }
+
+            // message: 성공시 파란글자, 실패시 빨간 글자
+          })
+          .catch((err) => console.log(err));
+      }
+    </script>
+  </body>
+</html>
