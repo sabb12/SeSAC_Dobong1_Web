@@ -15,12 +15,7 @@
     </style>
   </head>
   <body>
-    <form
-      action="/displayInfo"
-      method="post"
-      name="register"
-      enctype="multipart/form-data"
-    >
+    <form action="/register" method="post" enctype="multipart/form-data">
       <label>
         <span>아이디</span>
         <input type="text" name="userID" id="userID" />
@@ -38,15 +33,16 @@
 
       <label>
         <span>나이</span>
-        <input type="text" name="userAGE" id="userAGE" />
+        <input type="number" name="userAGE" id="userAGE" />
       </label>
 
       <label>
         <span>프로필사진</span>
         <input type="file" id="userFile" name="userFile" />
       </label>
-
-      <button type="button">리셋</button>
+      <!--type="reset" 또는 onclick="reset()"하면 기본으로 재공 해준다-->
+      <button type="reset">리셋타입</button>
+      <button onclick="reset()">리셋함수</button>
       <button type="submit">회원가입</button>
     </form>
     <script></script>
