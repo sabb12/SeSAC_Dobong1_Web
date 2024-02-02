@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <!-- head include -->
+    <%-include("./include/head")%>
+  </head>
+  <body>
+    <!-- header include -->
+    <%-include("./include/header.ejs")%>
+    <!--
+      {
+        user: userID,
+        contentData: tempDB, // [{},{}]
+      }
+    -->
+    <h2>안녕하세요! <%=user%> 의 블로그입니다!!🤔</h2>
+    <ul>
+      <%for(let content of contentData) {%>
+      <li>
+        <a href="/content/<%=content.contentID%>"><%=content.title%></a>
+        <button onclick="deleteContent('<%=content.contentID%>', this)">
+          삭제
+        </button>
+      </li>
+      <%}%>
+    </ul>
+    <script>
+      function deleteContent(contentID, btn) {
+        console.log("contentID: ", contentID);
+        console.log("btn: ", btn);
+        if (confirm("정말 삭제하실건가요? 😡")) {
+          axios({
+            method: "delete",
+            url: "blog/delete?contentID=" + contentID,
+          }).catch((err) => {
+            console.log(err);
+          });
+          // console.log("btn.parentNode: ", btn.parentNode);
+          btn.parentNode.remove();
+        }
+      }
+    </script>
+  </body>
+</html>
