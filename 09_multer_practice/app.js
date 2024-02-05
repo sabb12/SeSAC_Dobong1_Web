@@ -52,7 +52,7 @@ app.post("/register", uploadDetail.single("userFile"), function (req, res) {
   // }
   // result에 정보를 보내 주는 것이다
   res.render("result", {
-    image: req.file.path,
+    image: req.file ? req.file.path : null, // 여기 문제 일수도
     userInfo: req.body,
   });
 });
