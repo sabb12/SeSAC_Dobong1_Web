@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form name="login">
+      <input type="text" name="userId" required />
+      <input type="password" name="userPw" required />
+      <p class="message"></p>
+      <button type="button" onclick="register()">로그인</button>
+    </form>
+    <script>
+      const message = document.querySelector(".message");
+
+      function register() {
+        const form = document.forms["login"];
+        const data = {
+          id: form.userId.value,
+          pw: form.userPw.value,
+        };
+
+        if (!form.userId.checkValidity() || !form.userPw.checkValidity())
+          return (message.textContent = "아이디와 비밀번호 입력해주세요");
+
+        axios({
+          method: "POST",
+          url: "/login",
+          data: data,
+        }).then((res) => {
+          console.log("res.data.success: ", res.data.success);
+          if (res.data.success) {
+            message.textContent = "로그인 했습니다";
+            message.style.color = "green";
+          } else {
+            message.textContent = "로그인 실패 했습니다";
+            message.style.color = "red";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
