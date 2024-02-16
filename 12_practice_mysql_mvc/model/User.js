@@ -66,11 +66,15 @@ exports.post_profile = (id, cb) => {
 };
 
 exports.edit_profile = (data, cb) => {
-  const sql = `UPDATE user SET name='${data.name}', pw='${data.pw}', WHERE id='${data.id}'`;
+  console.log("model", data); // {id, name,pw}
+  const sql = `UPDATE user 
+  SET name='${data.name}' ,pw='${data.pw}' 
+  WHERE id='${data.id}'`;
+
   conn.query(sql, (err, rows) => {
     if (err) throw err;
 
-    console.log("edit", rows);
+    console.log("model edit", rows);
     cb();
   });
 };
