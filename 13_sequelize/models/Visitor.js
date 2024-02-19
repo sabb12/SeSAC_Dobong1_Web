@@ -1,10 +1,13 @@
 const Visitor = function (Sequelize, DataTypes) {
-  // Sequelize는 model/index.js의 sequelize
-  // Datatypes는 model/index.js의 Sequelize
+  // Sequelize 는 model/index.js 의 sequelize
+  // Datatypes 는 mode/index.js의 Sequelize
 
-  // params1: 모델 이름 설정
-  // params2: 컬럼을 정의, (CREATE TABLE 제약조건)
-  // params3: 모델 옵션
+  //   const model = Sequelize.define(params1, params2, params3);
+
+  //   params1: 모델 이름 설정
+  //   params2: 컬럼을 정의, (CREATE TABLE 제약조건)
+  //   params3: 모델 옵션
+
   const model = Sequelize.define(
     "Visitor",
     {
@@ -28,6 +31,7 @@ const Visitor = function (Sequelize, DataTypes) {
       freezeTableName: true,
     }
   );
+
   return model;
 };
 
