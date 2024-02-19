@@ -45,6 +45,8 @@ exports.post_signin = (req, res) => {
   });
 };
 
+// POST /user/profile
+// 프로필 페이지 요청
 exports.post_profile = (req, res) => {
   console.log("req.body", req.body);
   // {userid}
@@ -54,6 +56,8 @@ exports.post_profile = (req, res) => {
   });
 };
 
+// POST /user/profile/edit
+// 회원 정보 수정
 exports.edit_profile = (req, res) => {
   console.log(req.body);
   User.edit_profile(req.body, () => {
@@ -61,8 +65,10 @@ exports.edit_profile = (req, res) => {
   });
 };
 
+// POST /user/profile/delete
 // 회원 정보 삭제
 exports.delete_profile = (req, res) => {
+  console.log(req.body); //{id: form.id.value}
   User.delete_profile(req.body.id, () => {
     res.end();
   });

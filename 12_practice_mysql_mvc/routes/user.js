@@ -15,9 +15,9 @@ router.post("/signup", controller.post_signup);
 router.post("/signin", controller.post_signin);
 // POST /user/profile
 router.post("/profile", controller.post_profile);
-// // POST /user/profile/edit
+// POST /user/profile/edit
 router.post("/profile/edit", controller.edit_profile);
-// // POST /user/profile/delete
+// POST /user/profile/delete
 router.post("/profile/delete", controller.delete_profile);
 
 module.exports = router;

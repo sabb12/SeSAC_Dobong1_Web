@@ -88,8 +88,11 @@ function editVisitor(id) {
   axios({
     method: "get",
     url: `/visitor/${id}`,
-    params: { id: id },
+    // params: { // req.query 로 전달됨
+    //   id: id,
+    // },
   }).then((res) => {
+    console.log(res);
     const { data } = res;
     console.log(data);
     const form = document.forms["visitor-form"];
@@ -97,8 +100,8 @@ function editVisitor(id) {
     form.comment.value = data.comment;
   });
   const html = `
-  <button type="button" onclick="editDo(${id})">수정</button>
-  <button type="button" onclick="editCancel()">취소</button>
+  <button type="button" onclick="editDo(${id});">수정</button>
+  <button type="button" onclick="editCancel();">취소</button>
   `;
   btnGroup.innerHTML = html;
 }

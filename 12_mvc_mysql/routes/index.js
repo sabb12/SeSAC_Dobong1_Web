@@ -10,7 +10,7 @@ router.get("/visitor/:id", controller.getVisitor);
 
 // 등록, 삭제, 수정
 router.post("/visitor", controller.postVisitor);
-router.delete("/visitor", controller.patchVisitor);
-router.patch("/visitor", controller.deleteVisitor);
+router.delete("/visitor", controller.deleteVisitor);
+router.patch("/visitor", controller.patchVisitor);
 
 module.exports = router;

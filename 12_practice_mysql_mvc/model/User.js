@@ -55,6 +55,8 @@ exports.post_signin = (data, cb) => {
   });
 };
 
+// POST /user/profile
+// 특정 회원 정보 "조회"
 exports.post_profile = (id, cb) => {
   console.log("model userid", id); // id='allie'
   const sql = `SELECT * FROM user WHERE userid='${id}' LIMIT 1`;
@@ -65,6 +67,8 @@ exports.post_profile = (id, cb) => {
   });
 };
 
+// POST /user/profile/edit
+// 회원 정보 "수정"
 exports.edit_profile = (data, cb) => {
   console.log("model", data); // {id, name,pw}
   const sql = `UPDATE user 
@@ -79,13 +83,14 @@ exports.edit_profile = (data, cb) => {
   });
 };
 
+// POST /user/profile/delete
+// 회원 정보 삭제
 exports.delete_profile = (id, cb) => {
-  console.log(id);
+  console.log("model delete id", id);
   const sql = `DELETE FROM user WHERE id=${id}`;
+
   conn.query(sql, (err, rows) => {
     if (err) throw err;
-
-    console.log("delete", rows);
     cb();
   });
 };

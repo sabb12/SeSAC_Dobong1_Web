@@ -20,9 +20,9 @@
       // POST /user/signup
       function register() {
         const form = document.forms["form_register"];
+
         if (!form.checkValidity()) {
           form.reportValidity();
-          // 아래 코드 실행 못하게 해주는 역할이다
           return;
         }
 

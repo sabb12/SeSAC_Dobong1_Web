@@ -39,7 +39,7 @@ exports.getVisitor = (id, cb) => {
 exports.postVisitor = (data, cb) => {
   // data={name: "진형", comment: "발렌타인데이!"};
   conn.query(
-    `INSERT INTO visitor VALUES(null, "${data.name}", "${data.comment}")`,
+    `INSERT INTO visitor VALUE(null, "${data.name}", "${data.comment}")`,
     (err, rows) => {
       if (err) throw err;
       console.log("Visitor.js post", rows);
