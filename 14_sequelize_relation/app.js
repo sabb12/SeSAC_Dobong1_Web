@@ -18,4 +18,4 @@ sequelize
       console.log(`http://localhost:${PORT}`);
     });
   })
-  .catch(err)(console.log(err));
+  .catch((err) => console.log(err));

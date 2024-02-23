@@ -1,14 +1,11 @@
--- Active: 1707101283116@@127.0.0.1@3306@sesac
-show TABLES;
+-- Active: 1707101281210@@127.0.0.1@3306@sesac
+show tables;
 
+-- 테이블 구조 확인
 DESC Player;
-
 DESC Profile;
-
 Desc Team;
-
 Desc Game;
-
 Desc TeamGame;
 
 insert into team(name, createdAt, updatedAt) values 

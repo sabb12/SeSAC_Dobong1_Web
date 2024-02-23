@@ -1,4 +1,4 @@
-const TeamGameModel = function (sequelize, DataTypes) {
+const TeamGameModel = (sequelize, DataTypes) => {
   const TeamGame = sequelize.define(
     "TeamGame",
     {

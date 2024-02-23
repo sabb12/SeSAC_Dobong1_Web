@@ -1,11 +1,10 @@
 @server=http://localhost:8080
-@playerId = 1
-@teamId = 1
+@playerId=1
+@teamId=3
 ### 전체 선수 조회
 GET {{server}}/players
 
-### 특정 선수 조회(params)
-
+### 특정 선수 조회 (params)
 GET {{server}}/players/{{playerId}}
 
 ### 선수 "추가"
@@ -13,15 +12,17 @@ POST {{server}}/players
 Content-Type: application/json; charset=UTF-8
 
 {
-    "name": "손홍민",
-    "age": 31,
-    "teamid": 2
+    "name":"손흥민",
+    "age":31,
+    "teamid":2
 }
 
 ### 특정 선수의 소속 팀 변경(params)
 PATCH {{server}}/players/{{playerId}}/team
+Content-Type: application/json; charset=UTF-8
+
 {
-    "teamId": 3
+    "teamid":3
 }
 
 ### 특정 선수 삭제(params)
@@ -29,24 +30,18 @@ DELETE {{server}}/players/{{playerId}}
 
 #팀 관련 api 요청
 
-
-// 1
 ### 전체 팀 조회
-GET {{server}}/team
+GET {{server}}/teams
 
 ### 전체 팀 조회, sort, search
-### 이름 순으로 전체 팀 조회
-GET {{server}}/team?sort=name_asc
+### 이름 순으로 전체 팀 "조회"
+GET {{server}}/teams?sort=name_asc
 
 ### search 쿼리를 이용해서 팀 "검색"
 GET {{server}}/teams?search=KT
 
-// 2
 ### 특정 팀 조회 (params)
 GET {{server}}/teams/{{teamId}}
 
-// 3
-# 특정 팀의 모든 선수 조회
+### 특정 팀의 모든 선수 조회
 GET {{server}}/teams/{{teamId}}/players
-
-

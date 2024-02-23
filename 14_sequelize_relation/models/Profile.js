@@ -1,4 +1,4 @@
-const ProfileModel = function (sequelize, DataTypes) {
+const ProfileModel = (sequelize, DataTypes) => {
   const Profile = sequelize.define(
     "Profile",
     {
@@ -21,6 +21,7 @@ const ProfileModel = function (sequelize, DataTypes) {
       freezeTableName: true,
     }
   );
+
   return Profile;
 };
 

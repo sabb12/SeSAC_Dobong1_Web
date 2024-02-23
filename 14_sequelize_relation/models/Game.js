@@ -1,10 +1,10 @@
-const GameModel = function (sequelize, DataTypes) {
+const GameModel = (sequelize, DataTypes) => {
   const Game = sequelize.define(
     "Game",
     {
       game_id: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
+        primaryKey: true, //
         allowNull: false,
         autoIncrement: true,
       },
@@ -21,7 +21,7 @@ const GameModel = function (sequelize, DataTypes) {
       freezeTableName: true,
     }
   );
+
   return Game;
 };
-
 module.exports = GameModel;

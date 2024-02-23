@@ -1,4 +1,4 @@
-const PlayerModel = function (sequelize, DataTypes) {
+const PlayerModel = (sequelize, DataTypes) => {
   const Player = sequelize.define(
     "Player",
     {
@@ -18,10 +18,10 @@ const PlayerModel = function (sequelize, DataTypes) {
       },
     },
     {
-      // tableName: "Player", // 위에 "Player" 있기 때문에 tableName 안 써도 된다
       freezeTableName: true,
     }
   );
+
   return Player;
 };
 
