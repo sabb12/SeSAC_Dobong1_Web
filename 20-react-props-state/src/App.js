@@ -1,33 +1,44 @@
 // import "./App.css";
 
-import { ClassProps, ClassProps2 } from "./components/ClassProps";
-import { FunctionProps, FunctionProps2 } from "./components/FunctionProps";
-import {
-  FunctionPractProp1,
-  FunctionPractProp2,
-} from "./components/FunctionPractProp1";
-import ClassState from "./components/ClassState";
-import FunctionState from "./components/FunctionState";
-import FunctionStatePract1 from "./components/FunctionStatePract1";
+// import { ClassProps, ClassProps2 } from "./components/ClassProps";
+// import { FunctionProps, FunctionProps2 } from "./components/FunctionProps";
+// import {
+//   FunctionPractProp1,
+//   FunctionPractProp2,
+// } from "./components/FunctionPractProp1";
+// import ClassState from "./components/ClassState";
+// import FunctionState from "./components/FunctionState";
+// import FunctionStatePract1 from "./components/FunctionStatePract1";
+import Alphabet from "./components/Alphabet";
+import PropsMap from "./components/PropsMap";
+import MapPract from "./practice/MapPract";
+import MapPract2 from "./practice/MapPract2";
 
 function App() {
-  const pororoObjArr = [
-    {
-      name: "뽀로로",
-      age: "7",
-      nickName: "사고뭉치",
-    },
-    {
-      name: "루피",
-      age: "5",
-      nickName: "공주님",
-    },
-    {
-      name: "크롱",
-      age: "4",
-      nickName: "장난꾸러기",
-    },
-  ];
+  // const pororoObjArr = [
+  //   {
+  //     name: "뽀로로",
+  //     age: "7",
+  //     nickName: "사고뭉치",
+  //   },
+  //   {
+  //     name: "루피",
+  //     age: "5",
+  //     nickName: "공주님",
+  //   },
+  //   {
+  //     name: "크롱",
+  //     age: "4",
+  //     nickName: "장난꾸러기",
+  //   },
+  // ];
+
+  // const dataArr = [
+  //   { name: "peach", number: 5, price: 5000 },
+  //   { name: "banaa", number: 1, price: 5000 },
+  //   { name: "apple", number: 10, price: 7000 },
+  //   { name: "grape", number: 2, price: 8500 },
+  // ];
 
   return (
     <div className="App">
@@ -60,7 +71,14 @@ function App() {
       {/* <FunctionState /> */}
 
       {/* <FunctionStatePract1 /> */}
-      <FunctionStatePract1 objArr={pororoObjArr} />
+      {/* <FunctionStatePract1 objArr={pororoObjArr} /> */}
+
+      <h1>map과 filter 사용</h1>
+      {/* <PropsMap arr={dataArr} /> */}
+      {/* <Alphabet /> */}
+      <h1>map과 filter 사용</h1>
+      {/* <MapPract /> */}
+      <MapPract2 />
     </div>
   );
 }
