@@ -2,6 +2,7 @@
 import SyntheticEvent from "./SyntheticEvent";
 import Counter from "./Counter";
 import HandlerEx from "./components/ex/HandlerEx";
+import EntirePractice from "./practice/EntirePractice";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       <SyntheticEvent />
       <Counter />
       <HandlerEx />
+      <hr />
+      <h1 style={{ alignItems: "center" }}>실습문제</h1>
+      <EntirePractice />
     </div>
   );
 }

@@ -87,9 +87,9 @@ export default function HandlerEx() {
 
   const fruits = [
     { value: "apple", label: "사과", image: "images/apple.jpg" },
-    { value: "banana", label: "바나나", image: "images/bananas.jpg" },
-    { value: "peach", label: "복숭아", image: "images/peaches.jpg" },
-    { value: "grape", label: "포도", image: "images/grapes.jpg" },
+    { value: "banana", label: "바나나", image: "images/banana.jpg" },
+    { value: "peach", label: "복숭아", image: "images/peach.jpg" },
+    { value: "grape", label: "포도", image: "images/grape.jpg" },
   ];
 
   const [fruit, setFruit] = useState(fruits[0].value);
