@@ -18,6 +18,10 @@
 .mainPage {
   background-color: #ffe5e3;
   min-height: 100vh;
+  &.dark {
+    background-color: #333;
+    color: white;
+  }
 }
 
 // product page
