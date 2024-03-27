@@ -1,4 +1,5 @@
-import Form from "./components/UseForm";
+// import Form from "./components/UseForm";
+import Form from "./practice/useFormPract";
 
 import CustomHook from "./components/CustomHook";
 import UseCallback from "./components/UseCallback";
