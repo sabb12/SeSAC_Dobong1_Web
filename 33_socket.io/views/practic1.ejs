@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습1</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <div class="container"></div>
+    <button id="hello">hello</button>
+    <button id="study">study</button>
+    <button id="bye">bye</button>
+    <script>
+      const socket = io();
+
+      const container = document.querySelector(".container");
+      const hello = document.getElementById("hello");
+      const study = document.getElementById("study");
+      const bye = document.getElementById("bye");
+
+      hello.addEventListener("click", (e) => {
+        e.preventDefault();
+        socket.emit("helloMessage", "Hello World!", (res) => {
+          container.innerText = `${res}`;
+        });
+      });
+
+      socket.on("helloMessage_render", (message) => {
+        container.innerText = `${message}`;
+      });
+
+      study.addEventListener("click", (e) => {
+        e.preventDefault();
+        socket.emit("studyMessage", "study", (res) => {
+          container.innerText = `${res}`;
+        });
+      });
+
+      socket.on("studyMessage_render", (message) => {
+        container.innerText = `${message}`;
+      });
+
+      bye.addEventListener("click", (e) => {
+        e.preventDefault();
+        socket.emit("byeMessage", "bye", (res) => {
+          container.innerText = `${res}`;
+        });
+      });
+
+      socket.on("byeMessage_render", (message) => {
+        container.innerText = `${message}`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practic2</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+      .wrapper {
+        border: 1px solid black;
+        width: 400px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+      }
+      .space {
+        border: 1px solid black;
+        background-color: lightskyblue;
+        width: 400px;
+        height: 500px;
+      }
+
+      /* Align left */
+      .message-left {
+        text-align: left;
+      }
+
+      /* Align right */
+      .message-right {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ~~가 입장했습니다 -->
+    <div class="wrapper">
+      <div class="space">
+        <div id="space1" style="text-align: right"></div>
+        <div id="space2" style="text-align: left"></div>
+      </div>
+      <div>
+        <form id="chat">
+          <input type="text" placeholder="채팅 내용" id="message" />
+          <button>전송</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      const space1 = document.getElementById("space1");
+      const space2 = document.getElementById("space2");
+
+      space1.innerHTML = "안녕";
+
+      space2.innerHTML = "그래";
+      space2.style.textAlign = "left";
+      space.append(p);
+    </script>
+  </body>
+</html>
