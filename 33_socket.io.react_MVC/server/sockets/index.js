@@ -14,6 +14,21 @@ function socketHandler(server) {
       console.log(message);
       socket.emit("test2", "잘 받았습니다");
     });
+
+    socket.on("hello", (msg) => {
+      console.log("client: ", msg);
+      socket.emit("hello2", msg);
+    });
+
+    socket.on("study", (msg) => {
+      console.log("client: ", msg);
+      socket.emit("study2", msg);
+    });
+
+    socket.on("bye", (msg) => {
+      console.log("client: ", msg);
+      socket.emit("bye2", msg);
+    });
     socket.on("disconnect", () => {
       // 클라이언트 연결 해제
     });
