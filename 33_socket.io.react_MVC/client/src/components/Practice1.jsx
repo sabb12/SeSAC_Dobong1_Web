@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import io from 'socket.io-client';
+import { useState, useEffect } from "react";
+import io from "socket.io-client";
 
-const socket = io.connect('http://localhost:8080', { autoConnect: false });
+const socket = io.connect("http://localhost:8080", { autoConnect: false });
 
 export default function Practice1() {
   const initSocketConnect = () => {
@@ -12,29 +12,44 @@ export default function Practice1() {
 
   useEffect(() => {
     initSocketConnect();
+
+    socket.on("hello2", (msg) => {
+      setFromServerStr(`server: ${msg}`);
+    });
+
+    socket.on("study2", (msg) => {
+      setFromServerStr(`server: ${msg}`);
+    });
+
+    socket.on("bye2", (msg) => {
+      setFromServerStr(`server: ${msg}`);
+    });
   }, []); // mount
 
-  const [fromServerStr, setFromServerStr] = useState('');
+  const [fromServerStr, setFromServerStr] = useState("");
 
   const hello = () => {
-    socket.emit('hello', '안녕하세요');
-    socket.on('hello2', (msg) => {
-      setFromServerStr('hello: ' + msg);
-    });
+    socket.emit("hello", "hello");
+    console.log("hello");
+    // socket.on("hello2", (msg) => {
+    //   setFromServerStr(`server: ${msg}`);
+    // });
   };
 
   const study = () => {
-    socket.emit('study', '공부합시다');
-    socket.on('study2', (msg) => {
-      setFromServerStr('study: ' + msg);
-    });
+    socket.emit("study", "study");
+    console.log("study");
+    // socket.on("study2", (msg) => {
+    //   setFromServerStr(`server: ${msg}`);
+    // });
   };
 
   const bye = () => {
-    socket.emit('bye', '잘가');
-    socket.on('bye2', (msg) => {
-      setFromServerStr('bye: ' + msg);
-    });
+    socket.emit("bye", "bye");
+    console.log("bye");
+    // socket.on("bye2", (msg) => {
+    //   setFromServerStr(`server: ${msg}`);
+    // });
   };
 
   return (

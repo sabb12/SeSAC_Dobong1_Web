@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <h1>socket 사용해보기</h1>
-      <Start />
+      {/* <Start /> */}
       <Practice1 />
     </div>
   );

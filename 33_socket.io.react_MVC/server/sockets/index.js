@@ -17,17 +17,17 @@ function socketHandler(server) {
 
     socket.on("hello", (msg) => {
       console.log("client: ", msg);
-      socket.emit("hello2", msg);
+      socket.emit("hello2", "안녕하세요");
     });
 
     socket.on("study", (msg) => {
       console.log("client: ", msg);
-      socket.emit("study2", msg);
+      socket.emit("study2", "공부합시다..");
     });
 
     socket.on("bye", (msg) => {
       console.log("client: ", msg);
-      socket.emit("bye2", msg);
+      socket.emit("bye2", "안녕히가세요");
     });
     socket.on("disconnect", () => {
       // 클라이언트 연결 해제
